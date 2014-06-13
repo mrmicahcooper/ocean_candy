@@ -1,0 +1,57 @@
+Request URL:http://co-ops.nos.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?datatype=XML&Stationid=8720211&text=datafiles%252F8720211%252F13062014%252F863%252F&imagename=images%2F8720211%2F13062014%2F863%2F8720211_2014-06-14.gif&bdate=20140613&timelength=daily&timeZone=2&dataUnits=1&interval=&edate=20140614&StationName=MAYPORT+NAVAL+STA.%2C+ST+JOHNS+RIVER&Stationid_=8720211&state=FL&primary=Harmonic&datum=MLLW&timeUnits=2&ReferenceStationName=Mayport+Naval+Station%2C+Water+Treatment+Dock&ReferenceStation=8720211&HeightOffsetLow=&HeightOffsetHigh=&TimeOffsetLow=-6&TimeOffsetHigh=-12&pageview=dayly&print_download=true&Threshold=&thresholdvalue=
+
+
+query string parameters
+datatype=XML
+Stationid=8720211
+text=datafiles%252F8720211%252F13062014%252F863%252F
+imagename=images%2F8720211%2F13062014%2F863%2F8720211_2014-06-14.gif
+bdate=20140613
+timelength=daily
+timeZone=2
+dataUnits=1
+interval=
+edate=20140614
+StationName=MAYPORT+NAVAL+STA.%2C+ST+JOHNS+RIVER
+Stationid_=8720211
+state=FL
+primary=Harmonic
+datum=MLLW
+timeUnits=2
+ReferenceStationName=Mayport+Naval+Station%2C+Water+Treatment+Dock
+ReferenceStation=8720211
+HeightOffsetLow=
+HeightOffsetHigh=
+TimeOffsetLow=-6
+TimeOffsetHigh=-12
+pageview=dayly
+print_download=true
+Threshold=
+thresholdvalue=
+
+datatype:XML
+Stationid:8720211
+text:datafiles%2F8720211%2F13062014%2F863%2F
+imagename:images/8720211/13062014/863/8720211_2014-06-14.gif
+bdate:20140613
+timelength:daily
+timeZone:2
+dataUnits:1
+interval:
+edate:20140614
+StationName:MAYPORT NAVAL STA., ST JOHNS RIVER
+Stationid_:8720211
+state:FL
+primary:Harmonic
+datum:MLLW
+timeUnits:2
+ReferenceStationName:Mayport Naval Station, Water Treatment Dock
+ReferenceStation:8720211
+HeightOffsetLow:
+HeightOffsetHigh:
+TimeOffsetLow:-6
+TimeOffsetHigh:-12
+pageview:dayly
+print_download:true
+Threshold:
+thresholdvalue:
