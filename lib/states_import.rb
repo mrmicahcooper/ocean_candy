@@ -87,6 +87,4 @@ class StateImport
   end
 end
 
-
-
 StateImport.new.import
