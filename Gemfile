@@ -5,6 +5,7 @@ gem 'ox'
 gem 'nokogiri'
 gem 'oj'
 
-group :development do
+group :development, :test do
   gem 'rspec'
+  gem 'pry'
 end
