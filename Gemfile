@@ -5,6 +5,7 @@ gem 'nokogiri'
 gem 'oj'
 gem 'ox'
 gem 'sinatra'
+gem 'puma'
 
 group :development, :test do
   gem 'rspec'
