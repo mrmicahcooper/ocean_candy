@@ -13,7 +13,7 @@ class App < Sinatra::Base
     content_type :json
 
     Oj.dump(
-      Station.all.map(&:to_h),
+      Station.all.group_by(&:state_name),
       mode: :compat
     )
   end

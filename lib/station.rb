@@ -16,6 +16,13 @@ class Station < OpenStruct
     end
   end
 
+  def to_hash
+    {
+      name: name,
+      id: station_id
+    }
+  end
+
   def tides(year = Time.now.year)
     @tide_year = year
     raw_tides.map do |raw_tide|
