@@ -6,16 +6,29 @@ class App < Sinatra::Base
 
 
   get '/' do
-    "<h1>Ocean Candy</h1>"
+    "<h1>Ocean Candy</h1><a href='/stations'>Stations JSON</a>"
   end
 
   get '/stations' do
     content_type :json
-    stations = Station.all.map do |station|
-      station.for_json
-    end
 
-    Oj.dump(stations, mode: :compat)
+    Oj.dump(
+      Station.all.map(&:to_h),
+      mode: :compat
+    )
+  end
+
+  get '/stations/:station_id/tides' do
+    content_type :json
+
+    station = Station.find(params[:station_id])
+    tides = station.tides_for_date(params[:date])
+
+    Oj.dump(
+      tides.map(&:to_h),
+      mode: :compat
+    )
+
   end
 
 end
