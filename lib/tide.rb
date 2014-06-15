@@ -2,21 +2,21 @@ require 'ostruct'
 
 class Tide < OpenStruct
 
-  def date
-    Time.parse(super)
-  end
-
   def for_json
     {
-      date_time: date_time,
+      time: time.to_s,
       feet: feet,
       tide: tide
     }
-
   end
 
-  def date_time
-    require 'pry'; binding.pry
+  def is_on_date?(date)
+    date.year  == time.year &&
+    date.month == time.month &&
+    date.day   == time.day
   end
 
+  def time
+    @time ||= Time.parse(super)
+  end
 end

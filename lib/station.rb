@@ -25,15 +25,12 @@ class Station < OpenStruct
 
   def tides_for_date(date)
     if date.nil?
-      querying_date = Time.now
+      query_date = Time.now
     else
-      querying_date = Time.parse(date)
+      query_date = Time.parse(date)
     end
-
-    tides(querying_date.year).select do |tide|
-      tide.date.year == querying_date.year &&
-      tide.date.month == querying_date.month &&
-      tide.date.day == querying_date.day
+    tides(query_date.year).select do |tide|
+      tide.is_on_date?(query_date)
     end
   end
 
