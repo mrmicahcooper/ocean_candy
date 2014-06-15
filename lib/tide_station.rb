@@ -19,9 +19,11 @@ class TideStation < Station
     end
 
     CSV.open(csv_file_name, 'w') do |csv|
-      csv << %w[date day time inches centimeters tide]
+      csv << %w[time feet centimeters tide]
       tides.each do |tide|
-        csv << tide
+        year, month, day, hour, minute = tide[0].split("/") + tide[2].split(':')
+        time = Time.utc(year, month, day, hour, minute, "0000")
+        csv << [time.to_s, tide[3], tide[4], tide[5]]
       end
     end
     puts name + "-" + station_id + "ADDED"
@@ -64,7 +66,7 @@ class TideStation < Station
       req.params['ReferenceStation']     = station_id
 
       req.params['timelength']           = 'daily'
-      req.params['timeZone']             = '2'
+      req.params['timeZone']             = '0'
       req.params['dataUnits']            = '1'
       req.params['interval']             = ''
 
