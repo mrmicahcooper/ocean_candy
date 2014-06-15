@@ -6,7 +6,10 @@ class TideStation < Station
   attr_reader :import_year, :import_date
 
   def import_tides(year=Time.now.year)
-    return false unless response.status == 200
+    if response.status != 200
+      puts station_id
+      return false
+    end
 
     @import_year = year
     @import_date = Time.new(@import_year).strftime('%Y%m%d')
@@ -19,9 +22,8 @@ class TideStation < Station
       tides.each do |tide|
         csv << tide
       end
-      puts station_id
-
     end
+    puts name + "-" + station_id
     true
   end
 
@@ -45,21 +47,37 @@ class TideStation < Station
 
   def response
     @response ||= Faraday.get(url) do |req|
-      req.params['datatype']       = "Annual XML"
-      req.params['Stationid']      = station_id
-      req.params['bdate']          = import_date
-      req.params['timelength']     = "daily"
-      req.params['edate']          = import_date
-      req.params['StationName']    = name
-      req.params['primary']        = predictions
-      req.params['datum']          = "MLLW"
-      req.params['timeUnits']      = 2
-      req.params['print_download'] = true
+      req.params['datatype']             = "Annual XML"
+      req.params['Stationid']            = station_id
+      req.params['Stationid_']           = station_id
+      req.params['bdate']                = import_date
+      req.params['edate']                = import_date
+      req.params['StationName']          = name
+      req.params['primary']              = predictions
+      req.params['datum']                = "MLLW"
+      req.params['timeUnits']            = 2
+      req.params['print_download']       = true
+
+      req.params['ReferenceStationName'] = name
+      req.params['ReferenceStation']     = station_id
+
+      req.params['timelength']           = 'daily'
+      req.params['timeZone']             = '2'
+      req.params['dataUnits']            = '1'
+      req.params['interval']             = ''
+
+      req.params['pageview']             = 'dayly'
+      req.params['print_download']       = 'true'
+
+      req.headers['Accept']              = 'text/html,application/xhtml+xml,application/xml;q                                                          = 0.9,image/webp,*/*;q = 0.8'
+      req.headers['Accept-Language']     = 'en-US,en;q                                                                                                 = 0.8'
+
     end
   end
 
   def url
     "http://co-ops.nos.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp"
+    # "http://140.90.78.215/noaatidepredictions/NOAATidesFacade.jsp"
   end
 
 end
