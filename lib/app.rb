@@ -25,7 +25,7 @@ class App < Sinatra::Base
     tides = station.tides_for_date(params[:date])
 
     Oj.dump(
-      tides.map(&:for_json),
+      tides.group_by{|t| t.tide},
       mode: :compat
     )
 

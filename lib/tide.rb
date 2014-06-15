@@ -2,7 +2,7 @@ require 'ostruct'
 
 class Tide < OpenStruct
 
-  def for_json
+  def to_hash
     {
       time: time.to_s,
       feet: feet,
@@ -19,4 +19,12 @@ class Tide < OpenStruct
   def time
     @time ||= Time.parse(super)
   end
+
+  def tide
+    {
+      "H" => "High",
+      "L" => "Low"
+    }[super]
+  end
+
 end
