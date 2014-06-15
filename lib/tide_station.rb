@@ -3,17 +3,18 @@ require 'faraday'
 
 class TideStation < Station
 
-  attr_reader :import_year, :import_date
-
   def import_tides(year=Time.now.year)
-    if response.status != 200
-      puts station_id
-      return false
-    end
 
     @import_year = year
     @import_date = Time.new(@import_year).strftime('%Y%m%d')
+
     if File.exists?(csv_file_name)
+      puts csv_file_name + "EXISTS"
+      return false
+    end
+
+    if response.status != 200
+      puts station_id + "NOT FOUND"
       return false
     end
 
@@ -23,7 +24,7 @@ class TideStation < Station
         csv << tide
       end
     end
-    puts name + "-" + station_id
+    puts name + "-" + station_id + "ADDED"
     true
   end
 
@@ -36,6 +37,7 @@ class TideStation < Station
       item.nodes.map(&:text)
     end
   end
+
 
   def tides_doc
     Ox.parse(response_body)
@@ -69,10 +71,15 @@ class TideStation < Station
       req.params['pageview']             = 'dayly'
       req.params['print_download']       = 'true'
 
-      req.headers['Accept']              = 'text/html,application/xhtml+xml,application/xml;q                                                          = 0.9,image/webp,*/*;q = 0.8'
-      req.headers['Accept-Language']     = 'en-US,en;q                                                                                                 = 0.8'
-
     end
+  end
+
+  def import_year
+    @import_year ||= Time.now.year
+  end
+
+  def import_date
+    @import_date ||= Time.new(import_year).strftime('%Y%m%d')
   end
 
   def url
