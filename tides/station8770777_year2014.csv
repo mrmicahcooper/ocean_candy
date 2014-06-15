@@ -1,4 +1,4 @@
-date,day,time,inches,centimeters,tide
+date,day,time,feet,centimeters,tide
 2014/01/01,Wed,04:06 AM,0.9,27,L
 2014/01/01,Wed,06:08 AM,0.9,27,H
 2014/01/01,Wed,03:02 PM,-0.9,-27,L
