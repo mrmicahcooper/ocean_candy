@@ -1,33 +1,4 @@
-Request URL:http://co-ops.nos.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?datatype=XML&Stationid=8720211&text=datafiles%252F8720211%252F13062014%252F863%252F&imagename=images%2F8720211%2F13062014%2F863%2F8720211_2014-06-14.gif&bdate=20140613&timelength=daily&timeZone=2&dataUnits=1&interval=&edate=20140614&StationName=MAYPORT+NAVAL+STA.%2C+ST+JOHNS+RIVER&Stationid_=8720211&state=FL&primary=Harmonic&datum=MLLW&timeUnits=2&ReferenceStationName=Mayport+Naval+Station%2C+Water+Treatment+Dock&ReferenceStation=8720211&HeightOffsetLow=&HeightOffsetHigh=&TimeOffsetLow=-6&TimeOffsetHigh=-12&pageview=dayly&print_download=true&Threshold=&thresholdvalue=
-
-
-query string parameters
-datatype=XML
-Stationid=8720211
-text=datafiles%252F8720211%252F13062014%252F863%252F
-imagename=images%2F8720211%2F13062014%2F863%2F8720211_2014-06-14.gif
-bdate=20140613
-timelength=daily
-timeZone=2
-dataUnits=1
-interval=
-edate=20140614
-StationName=MAYPORT+NAVAL+STA.%2C+ST+JOHNS+RIVER
-Stationid_=8720211
-state=FL
-primary=Harmonic
-datum=MLLW
-timeUnits=2
-ReferenceStationName=Mayport+Naval+Station%2C+Water+Treatment+Dock
-ReferenceStation=8720211
-HeightOffsetLow=
-HeightOffsetHigh=
-TimeOffsetLow=-6
-TimeOffsetHigh=-12
-pageview=dayly
-print_download=true
-Threshold=
-thresholdvalue=
+http://co-ops.nos.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp
 
 datatype:XML
 Stationid:8720211
@@ -51,6 +22,38 @@ HeightOffsetLow:
 HeightOffsetHigh:
 TimeOffsetLow:-6
 TimeOffsetHigh:-12
+pageview:dayly
+print_download:true
+Threshold:
+thresholdvalue:
+
+===============================================================================================
+===============================================================================================
+
+http://co-ops.nos.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?
+
+datatype:Annual XML
+Stationid:8410834
+text:datafiles%2F8410834%2F13062014%2F657%2F
+imagename:images/8410834/13062014/657/8410834_2014-06-14.gif
+bdate:20140613
+timelength:daily
+timeZone:2
+dataUnits:1
+interval:
+edate:20140614
+StationName:PETTEGROVE POINT, DOCHET ISLAND
+Stationid_:8410834
+state:ME
+primary:Harmonic
+datum:MLLW
+timeUnits:2
+ReferenceStationName:Pettegrove Point, Dochet Island
+ReferenceStation:8410834
+HeightOffsetLow:
+HeightOffsetHigh:
+TimeOffsetLow:0
+TimeOffsetHigh:0
 pageview:dayly
 print_download:true
 Threshold:

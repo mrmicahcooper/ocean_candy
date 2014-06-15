@@ -1,6 +1,6 @@
 require 'csv'
 require 'ostruct'
-require 'stations'
+require './lib/stations'
 
 class Station < OpenStruct
 
@@ -15,6 +15,12 @@ class Station < OpenStruct
     end
   end
 
+  def for_json
+    to_h.merge(tides_link)
+  end
+
+  def tides_link
+    { tides: "stations/#{station_id}/tides.json" }
+  end
 
 end
-

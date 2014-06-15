@@ -12,7 +12,6 @@ describe Station do
 
   describe ".all" do
     it "returns all the stations" do
-      require 'pry'; binding.pry;
       expect(subject.all.count).to eq(3021)
       expect(subject.all.first).to be_a(Station)
     end
