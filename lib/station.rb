@@ -19,7 +19,9 @@ class Station < OpenStruct
   def to_hash
     {
       name: name,
-      id: station_id
+      id: station_id,
+      lattitude: lattitude,
+      longitude: longitude
     }
   end
 
